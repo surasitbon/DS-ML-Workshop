@@ -16,5 +16,5 @@ elif st.button(" 🧹การทำความสะอาดข้อมู�
     st.switch_page("pages/clean_app.py")
 elif st.button(" 🧹การทำความสะอาดข้อมูล"):
     st.switch_page("pages/cleaningbyLLVQ.py")
-elif st.button(" 🧹การเแปลงข้อมูล"):
+elif st.button(" 💫 การเแปลงข้อมูล"):
     st.switch_page("pages/transform_app.py")
