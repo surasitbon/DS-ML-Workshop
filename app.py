@@ -80,6 +80,6 @@ with col_predict[1]:
 with col_predict[2]:
     if st.button("🚚 การพยากรณ์ระยะเวลาขนส่ง"):
         st.switch_page("pages/truck_predict.py")
-with col_predict[3]:
+with col_predict[4]:
     if st.button("🏷️ การจำแนกประเภทข้อมูลยอดขาย"):
         st.switch_page("pages/classify_redbull_sale.py")
