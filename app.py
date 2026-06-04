@@ -20,3 +20,5 @@ elif st.button(" 💫 การเแปลงข้อมูล"):
     st.switch_page("pages/transform_app.py")
 elif st.button(" ☄️ การวิเคราะห์ข้อมูลเชิงสำรวจ"):
     st.switch_page("pages/EDA_app.py")
+elif st.button(" 🛍️ การพยากรณ์ยอดขายแบบง่าย"):
+    st.switch_page("pages/sale_predict.py")
