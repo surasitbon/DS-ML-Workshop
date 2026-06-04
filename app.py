@@ -1,48 +1,33 @@
 import streamlit as st
 
-# 1. ตั้งค่าหน้าเพจ
+# 1. ตั้งค่าหน้าเพจ (ดึง layout="wide" ของเดิมมาใช้)
 st.set_page_config(page_title="Boot Camp: DS & ML", layout="wide", page_icon="🏠")
 
-# 2. ปรับแต่ง CSS ใหม่ (กำหนดสีตัวอักษรบนปุ่มให้เข้มชัดเจน และเปลี่ยนสีตามการ Hover)
+# 2. แก้ไขตรงนี้: เปลี่ยนเป็น unsafe_allow_html=True
 st.markdown("""
     <style>
-    /* ปรับแต่งปุ่มสากล */
+    /* ปรับแต่งปุ่ม Streamlit ให้กว้างเต็มคอลัมน์และดูมีมิติ */
     div.stButton > button {
         width: 100%;
-        border-radius: 12px;
-        padding: 14px;
+        border-radius: 10px;
+        border: 1px solid #E5E7EB;
+        padding: 12px;
         font-size: 16px;
-        font-weight: 600;
-        transition: all 0.25s ease;
-        
-        /* แก้ปัญหาตัวหนังสือจาง: บังคับให้พื้นหลังเป็นสีอ่อน และตัวหนังสือเป็นสีมืด */
-        background-color: #F8FAFC !important;
-        color: #1E293B !important;
-        border: 2px solid #E2E8F0 !important;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        background-color: #FFFFFF;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
-    
-    /* เอฟเฟกต์เฉพาะปุ่มเมื่อเอาเมาส์ไปชี้ (Hover) ให้เปลี่ยนเป็นธีมสีฟ้าสดใส */
+    /* เอฟเฟกต์ตอนเอาเมาส์ไปชี้ที่ปุ่ม */
     div.stButton > button:hover {
-        background-color: #3B82F6 !important;
-        color: #FFFFFF !important;
-        border-color: #2563EB !important;
-        box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.3);
-        transform: translateY(-3px);
-    }
-    
-    /* ตกแต่งหัวข้อหมวดหมู่ให้น่าอ่านขึ้น */
-    .category-title {
-        font-size: 20px;
-        font-weight: bold;
-        margin-top: 25px;
-        margin-bottom: 12px;
-        color: #F1F5F9; /* สีขาวนวลสำหรับ Dark mode */
+        border-color: #3B82F6;
+        color: #3B82F6;
+        box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+        transform: translateY(-2px);
     }
     </style>
-""", unsafe_allow_html=True)
+""", unsafe_allow_html=True) # 👍 แก้ไขจุดนี้เรียบร้อยครับ
 
-# 3. ส่วนหัวข้อ (Header)
+# 3. ส่วนหัวข้อ (Header) 
 st.title("🏠 หน้าหลัก")
 
 header_col1, header_col2 = st.columns([3, 1])
@@ -55,18 +40,18 @@ with header_col2:
 st.success("📘 **Day 1:** การจัดการข้อมูลพื้นฐานและโครงสร้างข้อมูลด้วย Python")
 st.markdown("---")
 
-# 4. ส่วนของปุ่มกดแยกตามหมวดหมู่
+# 4. ส่วนของปุ่มกดแยกตามหมวดหมู่ (Navigation Menu)
 st.write("### 🗂️ เมนูระบบและแอปพลิเคชัน")
 
 # --- หมวดหมู่ที่ 1: ระบบคำนวณพื้นฐาน ---
-st.markdown('<p class="category-title">🧮 General Tools</p>', unsafe_style_html=False)
+st.markdown("#### 🧮 General Tools")
 col_basic = st.columns(3)
 with col_basic[0]:
     if st.button("💰 ระบบคำนวณส่วนลดตามยอดซื้อ"):
         st.switch_page("pages/app1_discount_calc.py")
 
 # --- หมวดหมู่ที่ 2: เครื่องมือจัดการข้อมูล (Data Preparation) ---
-st.markdown('<p class="category-title">🧹 Data Cleaning & Transformation</p>', unsafe_style_html=False)
+st.markdown("#### 🧹 Data Cleaning & Transformation")
 col_clean = st.columns(4)
 
 with col_clean[0]:
@@ -83,7 +68,7 @@ with col_clean[3]:
         st.switch_page("pages/transform_app.py")
 
 # --- หมวดหมู่ที่ 3: การวิเคราะห์และพยากรณ์ (Data Analysis & Analytics) ---
-st.markdown('<p class="category-title">🔮 Data Analysis & Prediction</p>', unsafe_style_html=False)
+st.markdown("#### 🔮 Data Analysis & Prediction")
 col_predict = st.columns(3)
 
 with col_predict[0]:
