@@ -3,7 +3,7 @@ import streamlit as st
 # 1. ตั้งค่าหน้าเพจ (ดึง layout="wide" ของเดิมมาใช้)
 st.set_page_config(page_title="Boot Camp: DS & ML", layout="wide", page_icon="🏠")
 
-# 2. ใส่ Custom CSS เล็กน้อยเพื่อตกแต่งปุ่มให้ดูสวยเด่นและสม่ำเสมอกัน
+# 2. แก้ไขตรงนี้: เปลี่ยนเป็น unsafe_allow_html=True
 st.markdown("""
     <style>
     /* ปรับแต่งปุ่ม Streamlit ให้กว้างเต็มคอลัมน์และดูมีมิติ */
@@ -25,21 +25,18 @@ st.markdown("""
         transform: translateY(-2px);
     }
     </style>
-""", unsafe_style_html=True)
+""", unsafe_allow_html=True) # 👍 แก้ไขจุดนี้เรียบร้อยครับ
 
-# 3. ส่วนหัวข้อ (Header) ปรับให้ดูเป็นระเบียบและโปรแกรมเมอร์สไตล์
+# 3. ส่วนหัวข้อ (Header) 
 st.title("🏠 หน้าหลัก")
 
-# ใช้ columns ช่วยแบ่งพื้นที่ส่วนหัวให้ดูสมดุล
 header_col1, header_col2 = st.columns([3, 1])
 with header_col1:
     st.write("### Boot Camp: Data Science and Machine Learning")
     st.caption("🚀 7 Day Intensive Hands-on Workshop")
 with header_col2:
-    # นำโค้ดกลุ่มมาทำเป็นตั๋วเก๋ๆ มุมขวา
     st.info("⚽ **Team:** LLVQ")
 
-# แถบแถลงเนื้อหาวันเรียน
 st.success("📘 **Day 1:** การจัดการข้อมูลพื้นฐานและโครงสร้างข้อมูลด้วย Python")
 st.markdown("---")
 
@@ -48,14 +45,14 @@ st.write("### 🗂️ เมนูระบบและแอปพลิเค�
 
 # --- หมวดหมู่ที่ 1: ระบบคำนวณพื้นฐาน ---
 st.markdown("#### 🧮 General Tools")
-col_basic = st.columns(3) # แบ่งเป็น 3 บล็อกสั้นๆ
+col_basic = st.columns(3)
 with col_basic[0]:
     if st.button("💰 ระบบคำนวณส่วนลดตามยอดซื้อ"):
         st.switch_page("pages/app1_discount_calc.py")
 
 # --- หมวดหมู่ที่ 2: เครื่องมือจัดการข้อมูล (Data Preparation) ---
 st.markdown("#### 🧹 Data Cleaning & Transformation")
-col_clean = st.columns(4) # แบ่งเป็น 4 คอลัมน์เรียงหน้ากระดาน
+col_clean = st.columns(4)
 
 with col_clean[0]:
     if st.button("🧼 Customers Data Cleaner"):
@@ -72,7 +69,7 @@ with col_clean[3]:
 
 # --- หมวดหมู่ที่ 3: การวิเคราะห์และพยากรณ์ (Data Analysis & Analytics) ---
 st.markdown("#### 🔮 Data Analysis & Prediction")
-col_predict = st.columns(3) # แบ่งเป็น 3 คอลัมน์ใหญ่ขึ้นมาหน่อย
+col_predict = st.columns(3)
 
 with col_predict[0]:
     if st.button("☄️ การวิเคราะห์ข้อมูลเชิงสำรวจ (EDA)"):
