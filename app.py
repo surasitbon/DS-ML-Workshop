@@ -83,3 +83,12 @@ with col_predict[2]:
 with col_predict[3]:
     if st.button("🏷️ การจำแนกประเภทข้อมูลยอดขาย"):
         st.switch_page("pages/classify_redbull_sale.py")
+
+# --- หมวดหมู่ที่ 4: Unsupervise models ---
+st.markdown("#### 🔮 System analysis")
+col_predict = st.columns(1)
+
+with col_predict[0]:
+    if st.button("🧺ระบบแนะนำสินค้าจาก Market Basket Analysis "):
+        st.switch_page("pages/association_items")
+
