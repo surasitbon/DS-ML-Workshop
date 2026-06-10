@@ -69,7 +69,7 @@ with col_clean[3]:
 
 # --- หมวดหมู่ที่ 3: การวิเคราะห์และพยากรณ์ (Data Analysis & Analytics) ---
 st.markdown("#### 🔮 Data Analysis & Prediction")
-col_predict = st.columns(3)
+col_predict = st.columns(4)
 
 with col_predict[0]:
     if st.button("☄️ การวิเคราะห์ข้อมูลเชิงสำรวจ (EDA)"):
