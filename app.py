@@ -14,7 +14,7 @@ st.markdown("""
         padding: 12px;
         font-size: 16px;
         transition: all 0.3s ease;
-        background-color: #66FF00;
+        background-color: #FF3333;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
     }
     /* เอฟเฟกต์ตอนเอาเมาส์ไปชี้ที่ปุ่ม */
