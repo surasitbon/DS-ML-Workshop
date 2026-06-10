@@ -90,5 +90,5 @@ col_predict = st.columns(1)
 
 with col_predict[0]:
     if st.button("🧺ระบบแนะนำสินค้าจาก Market Basket Analysis "):
-        st.switch_page("pages/association_items")
+        st.switch_page("pages/association_items.py")
 
